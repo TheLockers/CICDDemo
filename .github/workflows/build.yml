@@ -45,3 +45,11 @@ jobs:
         with:
           name: cicddemo-app
           path: ./publish/
+
+      - name: Report pipeline result
+        if: always()
+        run: |
+          echo "================================="
+          echo "CI/CD PIPELINE FINISHED"
+          echo "Status: ${{ job.status }}"
+          echo "================================="
